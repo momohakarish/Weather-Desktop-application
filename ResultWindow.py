@@ -20,7 +20,7 @@ class ResultWindow:
         self.__show_temp(forecast)
         self.__show_stats(forecast)
         self.__show_forecast(forecast)
-        self.__show_credits(forecast)
+        self.__show_credits()
 
     # Sets the basic window settings
     def __set_window_settings(self):
@@ -56,12 +56,12 @@ class ResultWindow:
 
     # Shows some stats on the next 3 days
     def __show_forecast(self, forecast):
-        self.canvas.create_text(3, 350, anchor=W, fill='white', text=f'{forecast.forecast[1].day}\t\t\t    {forecast.forecast[1].max_temp}   {forecast.forecast[1].min_temp}', font=('comic sans ms', 10, 'bold'))
+        self.canvas.create_text(3, 350, anchor=W, fill='white', text=f'{forecast.forecast[1].day}\t\t    {forecast.forecast[1].max_temp}   {forecast.forecast[1].min_temp}', font=('comic sans ms', 10, 'bold'))
         self.canvas.create_text(3, 375, anchor=W, fill='white', text=f'{forecast.forecast[2].day}\t\t\t    {forecast.forecast[2].max_temp}   {forecast.forecast[2].min_temp}', font=('comic sans ms', 10, 'bold'))
         self.canvas.create_text(3, 400, anchor=W, fill='white', text=f'{forecast.forecast[3].day}\t\t\t    {forecast.forecast[3].max_temp}   {forecast.forecast[3].min_temp}', font=('comic sans ms', 10, 'bold'))
 
     # Shows the source of the data
-    def __show_credits(self, forecast):
+    def __show_credits(self):
         self.canvas.create_text(25, 550, anchor=W, fill='white', text='All data came from OpenWeather API', font=('arial', 10, 'bold'))
 
     # Returns the correct path to the background picture needed according to the weather description
